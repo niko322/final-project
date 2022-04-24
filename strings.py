@@ -11,16 +11,20 @@ Example: ['mont', 'y py', 'thon', 's fl', 'ying', ' cir', 'cus']
 """
 import pytest
 
+
 def no_duplicates(a_string):
-    pass
+    return "".join(sorted(set(a_string)))
 
 
 def reversed_words(a_string):
-    pass
+    return a_string.split(" ")[::-1]
 
 
 def four_char_strings(a_string):
-    pass
+    result = []
+    for i in range(0, len(a_string), 4):
+        result.append(a_string[i:i + 4])
+    return(result)
 
 
 def test_no_duplicates():
@@ -44,4 +48,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    
